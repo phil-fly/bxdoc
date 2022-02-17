@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>百晓安全</title>
+  <link rel="shortcut icon" href="plugin\images\favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./vue.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- docsify-edit-on-github -->
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+<!-- Markdown 引用样式美化 -->
+<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-powershell.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-properties.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/matlab.min.js"></script>
+
+ <!--全文搜索,直接用官方提供的无法生效-->
+ <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+ <!-- 复制代码到剪贴板 -->
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <!-- 图片缩放 -->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script> 
+  <script>
+    window.$docsify = {
+      name: '百晓文档中心',
+      repo: 'https://gitee.com/bx-sec',
+      maxLevel: 5,//最大支持渲染的标题层级
+      subMaxLevel: 3,
+      homepage: 'README.md',
+      coverpage: true,
+      loadSidebar: true,
+      auto2top: true,//切换页面后是否自动跳转到页面顶部
+       //全文搜索
+       search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '找不到结果',
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3,
+      },
+      // 字数统计
+      count:{
+       countable:true,
+       fontsize:'0.9em',
+       color:'rgb(90,90,90)',
+       language:'chinese'
+      },
+      // 页脚
+      footer: {
+        copy: '<span>Copyright &copy; 2021 &nbsp 💖 &nbsp</span>',
+        auth: ' <strong><a href="https://github.com/phil-fly/phil-fly.git" target="_blank">phil-fly</a></strong>',
+        pre: '<hr/>',
+        style: 'font-size: 18px; text-align: center;',
+      },
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+  <!-- 页脚 -->
+<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+
+<script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+     <script>
+       document.body.oncopy = function () {
+         swal("复制成功 ",
+               "若要转载或引用请务必保留原文链接，并申明来源。",
+               "success"); };
+     </script>
+
+
+<!-- 红心点击特效 -->
+<script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+<!-- 访问量统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+
+</html>

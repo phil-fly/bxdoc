@@ -1,51 +1,40 @@
 ## 配置样例：
 
 ```
-{
-  "process_cfg": {
-    "enable": true,	
-    "driver_file":"/opt/mount/process"
-  },
-  "file_cfg": {
-    "enable": true,
-    "driver_file":"/opt/mount/file",
-    "monitor_path_map": {
-      "/": "default"
-    },
-    "file_resave": {
-      "enable": true,
-      "save_path": "/opt/file/monitor/",
-      "maxSizeMB": 100
-    }
-  },
-  "net_cfg": {
-    "enable": true,
-    "driver_file":"/opt/mount/net"
-  },
-  "report": {
-    "enable": true,
-    "type": "logfile"
-  },
-  "filterDir": "/opt/bxsec/filter"
-}
+uuid: 31ef3e81-d646-5bc4-5fc2-07353c05289f   #上报事件设备标识ID
+processMonitor:                              #进程监控配置
+  enable: true
+fileMonitor:                                 #文件监控配置
+  enable: true
+  monitorPath:                               #指定监控路径
+    '/': default
+  fileResave:                                #文件另存配置
+    enable: false
+    savePath: /opt/file/monitor/
+    maxSizeMB: 100
+netMonitor:                                  #网络监控配置
+  enable: true
+report:                                      #事件上报配置
+  enable: true
+  type: logfile                              #上报方式: logfile,http,kafka,stdout
+filterDir: /opt/bxsec/filter                 #指定降噪规则存储目录
 ```
 
 
 
 ## 说明：
+### filterDir
+降噪规则目录
 
 ### process_cfg配置
 
 - enable：是否打开进程监控.
-- driver_file：驱动接口文件.
 
 
 
 ### file_cfg配置
 
 - enable：是否打开文件监控.
-
-- driver_file：驱动接口文件.
 
 - monitor_path_map：监控路径列表.
   - key：监控路径
@@ -64,7 +53,6 @@
 ### net_cfg配置
 
 - enable：是否打开网络监控.
-- driver_file：驱动接口文件.
 
 ### report配置
 
@@ -85,7 +73,6 @@
     - net: https://127.0.0.1:12345/hostmonitor/net
 
 - kafka_report:
-
   - tls_enblse：是否打开tls.
 - Brokers
 

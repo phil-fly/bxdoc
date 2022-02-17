@@ -1,0 +1,10 @@
+- Note
+  - [云影EDR](doc/云影EDR.md)
+  - 技术文章  
+    - [crash分析(一)](doc/技术文档/crash分析(一).md)
+    - [crash分析(二)](doc/技术文档/crash分析(二).md)
+  - 安装文档
+    - [agent安装](./doc/安装文档/agent.md)
+  - 配置文档
+    - [事件规则](./doc/配置文档/事件规则说明.md)
+    - [降噪规则](./doc/配置文档/降噪规则说明.md)

@@ -6,19 +6,17 @@
 
 云影是由百晓安全团队开发维护的云环境端点威胁检测与响应系统。整个系统集异常检测、监控管理为一体，拥有容器监控、异常行为发现、内核级恶意行为阻断、高级分析等功能，可从多个维度行为信息中发现入侵行为。
 
-> akserver
-
+## akserver
 通过分析识别终端行为,产出对应的威胁事件与情报,上报威胁事件至本地威胁情报中心。
 
-> control
-
+## control
 主要功能为agent控制、升级更新、规则与策略同步、上线授管、keepalive等.
 
-> 客户端agent
+## 客户端agent
 
 主要负责采集监控数据，数据降噪以及数据上报，同时黑名单和基于事件规则命中来阻止已知威胁，支持一些异常行为的内核级阻断操作：例如恶意进程创建，非法外联.
 
-> kernel_driver
+## kernel_driver
 
 基于ftrace开发(3.x版本:ftrace, 2.x版本:inlinehook, 4.x版本:ebpf)，并根据进程行为，文件变动以及主机网络事件分别实现三个独立driver模块，三大模块基于akfs自研文件系统运行.
 
@@ -29,14 +27,14 @@ akfs_driver：山竹开发实现的一个文件系统，提供基础能力支持
 
 
 
-> 云影架构
+## 云影架构
 ![](images/about.png)
 
-> 输出示例
+## 输出示例
 ![](images/out.png)
 
 
-> 降噪规则说明
+## 降噪规则说明
 ```json
 [
     {
@@ -186,8 +184,8 @@ tags:
   - attack.t1082
 ```
 
-### 捕获数据说明
-> EventID:
+## 捕获数据说明
+### EventID:
 进程相关
 - 1001: 进程创建
 - 1002: 进程执行/命令执行
@@ -213,8 +211,7 @@ tags:
 - 3010: dns查询
 
 
-> 进程类事件字段内容
-
+### 进程类事件字段内容
 - DockerName: 关联docker 容器名称
 - EventID: 事件ID
 - Image: 进程
@@ -235,7 +232,7 @@ tags:
 - ActiveName: 发送kill信号进程名
 - TargetProcessName: 接受kill信号进程pid
 
-> 文件类字段内容
+### 文件类字段内容
 
 - DockerName: 关联docker 容器名称
 - Namespace: 进程命名空间ID
@@ -254,7 +251,7 @@ tags:
 - ptgid: 父进程TGID
 
 
-> 网络类字段内容
+### 网络类字段内容
 - DockerName: 关联docker 容器名称
 - Namespace: 进程命名空间ID
 - EventID: 事件ID
@@ -272,14 +269,3 @@ tags:
 - LocalPort: 本地端口
 - RemotePort: 远端端口
 - QueryName: DNS查询域名
-
-### 说明文档
-
-> 安装文档
-- [agent安装](./doc/安装文档/agent.md)
-
-> 配置文档
-
-- [事件规则](./doc/配置文档/事件规则说明.md)
-- [降噪规则](./doc/配置文档/降噪规则说明.md)
-- [akagent配置](./doc/配置文档/akagent配置.md)

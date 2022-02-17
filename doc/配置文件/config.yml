@@ -1,0 +1,17 @@
+uuid: 31ef3e81-d646-5bc4-5fc2-07353c05289f   #上报事件设备标识ID
+processMonitor:                              #进程监控配置
+  enable: true
+fileMonitor:                                 #文件监控配置
+  enable: true
+  monitorPath:                               #指定监控路径
+    '/': default
+  fileResave:                                #文件另存配置
+    enable: false
+    savePath: /opt/file/monitor/
+    maxSizeMB: 100
+netMonitor:                                  #网络监控配置
+  enable: true
+report:                                      #事件上报配置
+  enable: true
+  type: logfile                              #上报方式: logfile,http,kafka,stdout
+filterDir: /opt/bxsec/filter                 #指定降噪规则存储目录
