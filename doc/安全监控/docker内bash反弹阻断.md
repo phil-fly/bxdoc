@@ -50,4 +50,4 @@ time="2021-12-20 17:27:13" level=info msg="{\"DockerName\":\"taoyi\",\"EventID\"
 
 reverse shell阻断：
 
-[进程查杀](images/killbash1.png)
+![进程查杀](images/killbash1.png)
